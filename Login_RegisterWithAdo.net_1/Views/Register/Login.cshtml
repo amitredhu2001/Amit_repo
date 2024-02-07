@@ -1,0 +1,32 @@
+﻿@model Login_RegisterWithAdo.net_1.Models.Login
+@{
+    ViewBag.Title = "Index";
+}
+<form id="lofinform" asp-action="Login" method="post">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-info">Sign In</h2>
+            <div class="col-4 p-1 m-1">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group p-1 m-1">
+                    <label asp-for="@Model.Email"></label>
+                    <input asp-for="@Model.Email" type="email" class="form-control" />
+                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group p-1 m-1">
+                    <label asp-for="@Model.Password"></label>
+                    <input asp-for="@Model.Password" type="password" class="form-control col-4" />
+                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group p-1 m-1">
+                    <button type="submit" class="btn btn-info">Login</button>
+                </div>
+                <br />
+                <a asp-action="Register">Register as a new user</a>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
